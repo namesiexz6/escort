@@ -1,0 +1,20 @@
+{% import "input_macro.j2" as m %}
+
+<div>
+    <form name="form_data" action="/utama/" method="POST">
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>{{ m.input_biasa(name="txt_nama") }}</td>
+            </tr>
+            <tr>
+                <td>Ulang</td>
+                <td>{{ m.input_biasa(name="txt_ulang", type="number") }}</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" id="btn_submit" value="Kirim"></td>
+            </tr>
+        </table>
+    </form>
+</div>

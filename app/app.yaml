@@ -1,0 +1,25 @@
+# Versi Python yang dipakai
+runtime: python38
+
+# Environment yang dipakai
+env: standard
+
+# Perangkat yang dipakai
+instance_class: F2
+
+# Petakan URL dengan layanan
+handlers:
+# Informasikan /static sebagai direktori static
+- url: /static
+  static_dir: aplikasi/static
+
+# Kirim URL lain ke aplikasi
+- url: /.*
+  script: auto
+
+# Konfigurasi untuk automatic scaling
+automatic_scaling:
+  target_cpu_utilization: 0.9
+
+# Name service
+service: default

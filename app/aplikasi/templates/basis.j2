@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        {% block daftar_css %}{% endblock daftar_css %}
+    </head>
+    <body>
+        <div>
+            {% block judul_halaman %}
+                <p><b>Template: Hello world....</b></p>
+            {% endblock judul_halaman %}
+        </div>
+
+        {% include "form_data.j2" %}
+    </body>
+</html>

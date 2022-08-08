@@ -1,0 +1,7 @@
+dispatch: []
+# # Service untuk web app
+# - url: "*/app/*"
+#   service: default
+# # Service untuk API
+# - url: "*/api/*"
+#   service: api

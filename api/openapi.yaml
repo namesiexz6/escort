@@ -1,0 +1,60 @@
+swagger: '2.0'
+info:
+  description: |
+    API untuk Learn GAE.
+    Akan di deploy di Google Cloud.       
+  version: 1.0.0
+  title: Learn GAE API
+  # put the contact info for your development or API team
+  contact:
+    email: rahmad.dawood@gmail.com
+    name: Rahmad Dawood
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+  /tambah_data:
+    post:
+      summary: Menambah data baru
+      consumes: 
+        - application/json
+      produces:
+        - text/plain; charset=utf-8
+      parameters:
+        - in: body
+          name: data_baru
+          description: Data baru untuk ditambah
+          schema:
+            $ref: "#/definitions/satu_data"
+      responses:
+        200:
+          description: OK
+  /daftar:
+    get:
+      summary: Ambil semua data
+      produces:
+        - application/json
+        - text/plain; charset=utf-8
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/daftar_data"
+  
+definitions:
+  satu_data:
+    type: object
+    properties:
+      nama: 
+        type: string
+      ulang:
+        type: integer
+  daftar_data:
+    type: object
+    properties:
+      daftar: 
+        type: array
+        items:
+          $ref: "#/definitions/satu_data"

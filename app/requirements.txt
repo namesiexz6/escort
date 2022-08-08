@@ -1,0 +1,9 @@
+blinker
+simplejson
+watchdog
+flask
+requests
+oauthlib
+pyOpenSSL
+flask-login
+google-cloud-datastore

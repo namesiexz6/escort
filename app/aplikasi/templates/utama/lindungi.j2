@@ -1,0 +1,20 @@
+{% extends "basis.j2" %}
+
+{% block daftar_css %}
+        <link rel="stylesheet" href="/static/css/aplikasi.css">
+{% endblock daftar_css %}
+
+{% block judul_halaman %}
+        <p><b>Secure: Hello world....</b></p>
+        <form method="POST" action="/logout">
+            <input type="submit" id="btn_logout" value="Logout">
+        </form>
+
+        <div>
+            {% for cacah in daftar %}
+                Nama: <span>{{ cacah.nama | upper }}</span> &nbsp;&nbsp;&nbsp;
+                Ulang: <span>{{ cacah.ulang }}</span> &nbsp;&nbsp;&nbsp;
+                <br/>
+            {% endfor %}
+        </div>
+{% endblock judul_halaman %}

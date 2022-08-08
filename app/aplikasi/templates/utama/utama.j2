@@ -1,0 +1,33 @@
+{% extends "basis.j2" %}
+
+{% block daftar_css %}
+        <link rel="stylesheet" href="/static/css/aplikasi.css">
+{% endblock daftar_css %}
+
+{% block judul_halaman %}
+        <p><b>Hello world....</b></p>
+        <p>
+            {% set ulang = ulang+1 %}
+            Increment ulang: <span>{{ ulang }}</span>
+        </p>
+        <p>
+            {% for cacah in range(ulang) %}
+                <span>{{ nama | upper }}</span><br/>
+            {% endfor %}
+        </p>
+        <p>
+            {% if ulang % 2 == 0 %}
+                {{ ulang }} adalah bilangan genap.
+            {% elif ulang % 2 ==  1 %}
+                {{ ulang }} adalah bilangan ganjil.
+            {% else %}
+                {{ ulang }} bilangan apa ya??
+            {% endif %}
+        </p>
+        <p>
+            Form sudah dikirim sebanyak {{ session["jumlah_jalan"] }} kali. 
+        </p>
+        <p>
+            <a href="/login">Login via Google</a>
+        </>
+{% endblock judul_halaman %}
